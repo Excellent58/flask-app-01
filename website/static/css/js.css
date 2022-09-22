@@ -1,0 +1,10 @@
+#js {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.card-body {
+    background-color: rgb(66, 66, 93);
+    color: white;
+    border-radius: 5px;
+}

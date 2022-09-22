@@ -1,0 +1,19 @@
+#view {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.card-body {
+    background-color: rgb(66, 66, 93);
+    color: white;
+    border-radius: 5px;
+}
+
+pre {
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+#view, h5 {
+    color: rgb(183, 68, 122);
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HOME{% endblock %}</title>
+    
+    <!-- vendor css files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./vendor/bootstrap/css/bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='./vendor/bootstrap-icons/bootstrap-icons.css')}}">
+    <link href="{{url_for('static', filename='./vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Template CSS Files -->
+    {% block styles %}
+    <link href="{{url_for('static', filename='./css/main.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='./css/footer.css')}}" rel="stylesheet">
+    {% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- navbar -->
+    {%block navbar%}
+    <nav class="navbar navbar-expand-lg custom-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand custom-nav">Wise-Developer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item white">
+                        <a class="nav-link" href="{{url_for('views.home')}}">HOME</a>
+                    </li>
+
+                    <li class="nav-item white">
+                        <a class="nav-link" href="{{url_for('views.javascript')}}">JAVASCRIPT</a>
+                    </li>
+    
+                    <li class="nav-item white">
+                        <a class="nav-link" href="{{url_for('views.python')}}">PYTHON</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+
+    <!-- main content -->
+    {% block content%}
+    <main id="main">
+
+        <!-- posts section -->
+        <section id="posts" class="posts">
+            <div class="container green">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    {% for post in posts %}
+                        <div class="col">
+                            <div class="card h-100 custom-back">
+                                <!-- <img src="./static/images/coding.jpg" class="card-img-top" alt="..."> -->
+                                <div class="card-body">
+                                    <h5 class="card-title">{{post.post_title}}</h5>
+                                    <p class="card-text">{{post.description}}</p>
+                                    <a href="{{url_for('views.posts', post_id=post['id'])}}" class="text-warning stretched-link">view</a>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-info">{{post.date_created}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    {% endblock %}
+    
+    <!-- footer -->
+    {% block footer %}
+    <footer class="mt-auto" id="footer">
+        <div class="container">
+            <h3>Wise-Developer</h3>
+            <p>This is a blog where you can learn and master coding.
+            </p>
+            <div class="social-links">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; Copyright <strong><span>Wise-Developer</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="#">Wycliffe Musau</a>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}  
+
+    <!-- vendor js file -->
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/javascript/main.js"></script>
+</body>
+</html>

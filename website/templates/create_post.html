@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}create-post{% endblock %}
+{% block navbar%}{% endblock %}
+{% block content%}
+    <div class="container text-center" id="custom-create">
+        <form method="POST">
+            <label for="title" class="form-label">Title</label>
+            <input placeholder="post title..." name="post_title" id="post_title" class="form-control">
+            <label for="_category" class="form-label">category</label>
+            <input placeholder="category of post..." name="_category" id="_category" class="form-control">
+            <label for="description" class="form-label">description</label>
+            <input placeholder="post description..." name="description" id="description" class="form-control">
+            <label for="_category" class="form-label">content</label>
+            <textarea placeholder="post content..."name="text" id="text" class="form-control"></textarea>
+            <br />
+            <hr/>
+            <div>
+                <button type="submit" class="btn btn-lg btn-primary">Post</button>
+            </div>
+        </form>
+        
+        <br />
+        <hr/>
+        <div>
+            <a href="/home"><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
+        </div>
+    </div>
+{% endblock %}

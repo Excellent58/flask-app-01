@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}python-posts{% endblock %}
+{% block styles%}
+<link href="{{url_for('static', filename='./css/main.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='./css/footer.css')}}" rel="stylesheet">
+<link href="{{url_for('static', filename='./css/js.css')}}" rel="stylesheet">
+{% endblock%}
+{% block content%}
+<section id="posts" class="posts">
+    <div class="container" id="js">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            {% for post in posts %}
+            <div class="col">
+                <div class="card h-100 custom-back">
+                    <!-- <img src="./static/images/coding.jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.post_title}}</h5>
+                        <p class="card-text">{{post.description}}</p>
+                        <a href="{{url_for('views.posts', post_id=post['id'])}}"
+                            class="text-warning stretched-link">view post</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">{{post.date_created}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+</main>
+{% endblock %}

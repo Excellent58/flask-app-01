@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Admin{% endblock %}
+{% block content%}
+<main id="main">
+
+    <!-- posts section -->
+    <section id="posts" class="posts">
+        <div class="container green">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% for post in posts %}
+                <div class="col">
+                    <div class="card h-100 custom-back">
+                        <!-- <img src="./static/images/coding.jpg" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h5 class="card-title">{{post.post_title}}</h5>
+                            <p class="card-text">{{post.description}}</p>
+                            <a href="{{url_for('views.edit', post_id=post['id'])}}"
+                                class="text-warning stretched-link">edit</a>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">{{post.date_created}}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

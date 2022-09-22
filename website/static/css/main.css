@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(89, 93, 101);
+}
+
+.custom-nav {
+    background-color: #969cd0;
+}
+
+/* a {
+    color: white;
+    padding: 8px 25px;
+    border-radius: 5px
+} */
+ 
+.white a { 
+    color: white;
+} 
+
+.custom-nav {
+    color: #b5397f;
+}
+
+.custom-nav:hover {
+    color: #b5397f;
+}
+
+.white a:hover {
+    color: #63863d;
+}
+
+#main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.custom-back {
+    background-color: rgb(66, 66, 93);
+    color: white; 
+}
+
+h5 {
+    color: rgb(183, 68, 122);
+}
+
+.stretched-link {
+    text-decoration: none;
+    color: #b5397f;
+}
+
+#custom-edit {
+    background-color: rgb(66, 66, 93);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    align-content: center;
+    color: #969cd0;
+    padding: 10px;
+}
+
+#custom-create {
+    background-color: rgb(66, 66, 93);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    align-content: center;
+    color: #969cd0;
+    padding: 10px;
+}
+
+.credits a {
+    text-decoration: none;
+}
+

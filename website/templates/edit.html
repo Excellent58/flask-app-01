@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container text-center" id="custom-edit">
+    <form method="post">
+        <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="post_title" placeholder="Post title..." class="form-control form-control-sm"
+                value="{{post.post_title}}">
+            </input>
+
+            <label for="description" class="form-label">description</label>
+            <input type="text" name="description" placeholder="post description..." class="form-control form-control-sm"
+                value="{{post.description}}">
+            </input>
+
+            <label for="_category" class="form-label">category</label>
+            <input type="text" name="_category" placeholder="Post category..." class="form-control form-control-sm"
+                value="{{post._category}}">
+            </input>
+        </div>
+
+        <div class="form-group">
+            <label for="text" class="form-label">Content</label>
+            <textarea name="text" placeholder="Post content..."
+                class="form-control form-control-lg">{{post.text}}</textarea>
+        </div>
+        <hr>
+         <div class="form-group">
+            <button type="submit" class="btn btn-primary custom-submit">Update</button>
+        </div> 
+    </form>
+    <hr>
+    <form action="{{ url_for('views.delete', id=post['id']) }}" method="POST">
+        <input type="submit" value="Delete Post" class="btn btn-danger btn-sm"
+            onclick="return confirm('Are you sure you want to delete this post?')">
+    </form>
+</div>
+{% endblock %}

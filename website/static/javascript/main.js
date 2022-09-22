@@ -1,0 +1,1 @@
+const para = document.querySelector('.custom-p');
